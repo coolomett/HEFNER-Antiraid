@@ -1,0 +1,17 @@
+[Unit]
+Description=HEFNER AntiRaid | INSTANT Discord Bot
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/hefner-antiraid
+ExecStart=/usr/bin/node /opt/hefner-antiraid/index.js
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target
